@@ -1,64 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      canvas {
-        border: 1px solid black;
-      }
-      #dummy-button{
-        color: blueviolet;
-        /* position: absolute;
-        left: 12px; */
-      }
-    </style>
-</head>
-<body>
-    <h1>Please open this on a computer because i dont have the budget to make it to mobile devices :)</h1>
+    <link rel="stylesheet" href="layout.css" type="text/css" />
+  </head>
+  <body>
+    <h1>
+      Please open this on a computer because i dont have the budget to make it
+      to mobile devices :)
+    </h1>
     <canvas id="tutorial" width="150" height="150">
-        current stock price: $3.15 + 0.15
+      current stock price: $3.15 + 0.15
     </canvas>
     <button id="dummy-button">Press this</button>
-    <script>
-        var xPosition = 100;
-        var yPosition = 100;
-        function moveTheButton(){
-            var element = document.getElementById("dummy-button");
-            // xPosition += 1;
-            // yPosition +=1;
-            var evaluatedString = `translate(${xPosition}px,${yPosition}px)`;
-            element.style.transform = evaluatedString
-        }
-        function draw(){
-            const canvas =document.getElementById("tutorial");
-            if (canvas.getContext){
-                const ctx = canvas.getContext("2d");
+    <div class="object">
+      <h2>SQL Section</h2>
+      <img src="Images/Cloud.png" alt="Local Image" />
+    </div>
+    <table id="randomTable">
+      <!-- Table content will be dynamically generated here -->
+    </table>
+    <div>
+      <h2>Python Section</h2>
+      <textarea id="editor"></textarea>
+      <div>
+        <button onclick="formatText('bold')">Bold</button>
+        <button onclick="formatText('italic')">Italic</button>
+        <button onclick="formatText('underline')">Underline</button>
+        <button onclick="insertLink()">Insert Link</button>
+      </div>
+    </div>
+    <div>
+      <iframe
+        width="420"
+        height="315"
+        src="https://www.youtube.com/embed/1k9gRrg8c9Q"
+      >
+      </iframe>
+      <div id="element2">d</div>
+    </div>
 
-                ctx.fillStyle = "rgb(200,0,0)";
-                ctx.fillRect(10,10,50,50)
-
-                ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-                ctx.fillRect(30, 30, 50, 50);
-            }
-        }
-
-        // function hello(){
-        //     console.log("Hello");
-        // }
-        // setInterval(hello,10);
-        window.addEventListener("load",draw);
-        function animate() {
-            // Perform your animation or update logic here
-            moveTheButton();
-            // Call requestAnimationFrame again to schedule the next frame
-            requestAnimationFrame(animate);
-        }
-
-        // Start the animation loop
-        requestAnimationFrame(animate);
-
-    </script>
-</body>
+    <script type="text/javascript" src="index.js"></script>
+  </body>
 </html>
