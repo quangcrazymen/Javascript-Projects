@@ -22,13 +22,14 @@
     </canvas>
     <button id="dummy-button">Press this</button>
     <script>
+        var xPosition = 100;
+        var yPosition = 100;
         function moveTheButton(){
             var element = document.getElementById("dummy-button");
-            var xPosition = 100;
-            var yPosition = 100;
+            // xPosition += 1;
+            // yPosition +=1;
             var evaluatedString = `translate(${xPosition}px,${yPosition}px)`;
             element.style.transform = evaluatedString
-            // element.style.transform = "translate(200px,300px)"
         }
         function draw(){
             const canvas =document.getElementById("tutorial");
@@ -42,13 +43,17 @@
                 ctx.fillRect(30, 30, 50, 50);
             }
         }
+
+        // function hello(){
+        //     console.log("Hello");
+        // }
+        // setInterval(hello,10);
         window.addEventListener("load",draw);
         function animate() {
             // Perform your animation or update logic here
-            console.log("Hello")
+            moveTheButton();
             // Call requestAnimationFrame again to schedule the next frame
             requestAnimationFrame(animate);
-            moveTheButton();
         }
 
         // Start the animation loop
