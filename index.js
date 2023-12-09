@@ -26,8 +26,13 @@ function draw() {
 // setInterval(hello,10);
 window.addEventListener("load", draw);
 var element = document.getElementById("dummy-button");
-
+var element2 = document.getElementById("element2");
 element.addEventListener("click", generateTable);
+element2.addEventListener("mouseenter", moveElement2);
+
+function moveElement2() {
+  element2.style.transform = `translate(${xPosition}px,${yPosition}px)`;
+}
 function animate() {
   // Perform your animation or update logic here
   moveTheButton();
