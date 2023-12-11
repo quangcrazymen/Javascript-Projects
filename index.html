@@ -24,6 +24,10 @@
     </table>
     <div>
       <h2>Finance section</h2>
+      <h4>
+        At the interest rate of 15%, the 2 years discounting factor will be
+      </h4>
+      <input id="finance-section" type="text" />
     </div>
     <div>
       <h2>Python Section</h2>
@@ -42,9 +46,17 @@
         src="https://www.youtube.com/embed/1k9gRrg8c9Q"
       >
       </iframe>
-      <div id="element2">d</div>
+      <!-- <div id="element2">d</div> -->
     </div>
+    <button onclick="openModal()">Open Modal</button>
 
+    <div class="overlay" id="overlay">
+      <div class="modal">
+        <span class="close-btn" onclick="closeModal()">X</span>
+        <p>Congratulation you got the rigth answer, please move on</p>
+      </div>
+    </div>
+    <script type="text/javascript" src="data.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </body>
 </html>

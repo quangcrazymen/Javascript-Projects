@@ -2,8 +2,6 @@ var xPosition = 100;
 var yPosition = 100;
 function moveTheButton() {
   var element = document.getElementById("dummy-button");
-  // xPosition += 1;
-  // yPosition +=1;
   var evaluatedString = `translate(${xPosition}px,${yPosition}px)`;
   element.style.transform = evaluatedString;
 }
@@ -20,15 +18,20 @@ function draw() {
   }
 }
 
-// function hello(){
-//     console.log("Hello");
-// }
-// setInterval(hello,10);
 window.addEventListener("load", draw);
 var element = document.getElementById("dummy-button");
-var element2 = document.getElementById("element2");
+//var element2 = document.getElementById("element2");
 element.addEventListener("click", generateTable);
-element2.addEventListener("mouseenter", moveElement2);
+//element2.addEventListener("mouseenter", moveElement2);
+var finance_section = document.getElementById("finance-section");
+finance_section.addEventListener("input", compareWithRightValue);
+
+function compareWithRightValue() {
+  console.log("Hello");
+  if (finance_section.value === "123") {
+    openModal();
+  }
+}
 
 function moveElement2() {
   element2.style.transform = `translate(${xPosition}px,${yPosition}px)`;
@@ -44,9 +47,10 @@ function animate() {
 requestAnimationFrame(animate);
 
 function generateTable() {
+  console.log(getRandomName());
   // Number of rows and columns in the table
-  const numRows = 5;
-  const numCols = 4;
+  const numRows = 50;
+  const numCols = 6;
 
   // Get the table element
   var table = document.getElementById("randomTable");
@@ -54,11 +58,12 @@ function generateTable() {
   // Clear existing content
   table.innerHTML = "";
 
+  var headerName = ["Id", "Name", "Gender", "Age", "Interest", "Hobbies"];
   // Generate table header
   var headerRow = table.insertRow(0);
   for (var j = 0; j < numCols; j++) {
     var headerCell = headerRow.insertCell(j);
-    headerCell.innerHTML = "Header " + (j + 1);
+    headerCell.innerHTML = headerName[j];
   }
 
   // Generate random data for the table
@@ -85,4 +90,26 @@ function insertLink() {
   if (url) {
     document.execCommand("createLink", false, url);
   }
+}
+
+function openModal() {
+  var overlay = document.getElementById("overlay");
+  overlay.style.display = "flex";
+}
+
+function closeModal() {
+  var overlay = document.getElementById("overlay");
+  overlay.style.display = "none";
+}
+
+function getRandomInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getRandomName() {
+  return (
+    listOfName[getRandomInteger(0, 220)] +
+    " " +
+    listOfName[getRandomInteger(0, 220)]
+  );
 }
