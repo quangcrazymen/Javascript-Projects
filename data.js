@@ -257,3 +257,5 @@ var listOfHobbies = [
 ];
 
 const genders = ["male", "female"];
+
+const accumilatingNumbers = [115, 77, 256, 451, 333, 169, 268];
