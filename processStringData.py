@@ -1,4 +1,4 @@
-name = open ("Data/ListOfNames.txt")
+name = open ("Data/ListOfHobbies.txt")
 newStr = name.read()
 # print(newStr)
 
@@ -14,5 +14,5 @@ def add_comma_between_lines(input_string):
     return output_string
 
 result = add_comma_between_lines(newStr)
-with open("Data/ProcessedData.txt","w") as file:
+with open("Data/ProcessedDataHobbies.txt","w") as file:
     file.write(result)

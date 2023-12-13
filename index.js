@@ -20,18 +20,22 @@ function draw() {
 
 window.addEventListener("load", draw);
 var element = document.getElementById("dummy-button");
-//var element2 = document.getElementById("element2");
 element.addEventListener("click", generateTable);
-//element2.addEventListener("mouseenter", moveElement2);
 var finance_section = document.getElementById("finance-section");
 finance_section.addEventListener("input", compareWithRightValue);
+var sql_section = document.getElementById("sql-section");
 
 function compareWithRightValue() {
   console.log("Hello");
   if (finance_section.value === "123") {
     openModal();
   }
+  if (finance_section.value === "terminate") {
+    sql_section.style.display = "none";
+  }
 }
+
+function terminateSQLSection() {}
 
 function moveElement2() {
   element2.style.transform = `translate(${xPosition}px,${yPosition}px)`;
@@ -69,10 +73,20 @@ function generateTable() {
   // Generate random data for the table
   for (var i = 1; i <= numRows; i++) {
     var row = table.insertRow(i);
-    for (var j = 0; j < numCols; j++) {
-      var cell = row.insertCell(j);
-      cell.innerHTML = getRandomValue();
-    }
+    // for (var j = 0; j < numCols; j++) {
+    var id = row.insertCell(0);
+    id.innerHTML = getRandomInteger(0, 999999);
+    var name = row.insertCell(1);
+    name.innerHTML = getRandomName();
+    var gender = row.insertCell(2);
+    gender.innerHTML = genders[getRandomInteger(0, 1)];
+    var age = row.insertCell(3);
+    age.innerHTML = getRandomInteger(0, 60);
+    var interest = row.insertCell(4);
+    interest.innerHTML = getRandomHobbies();
+    var hobbies = row.insertCell(5);
+    hobbies.innerHTML = getRandomHobbies();
+    // }
   }
 }
 
@@ -111,5 +125,15 @@ function getRandomName() {
     listOfName[getRandomInteger(0, 220)] +
     " " +
     listOfName[getRandomInteger(0, 220)]
+  );
+}
+
+function getRandomHobbies() {
+  return (
+    listOfHobbies[getRandomInteger(0, 31)] +
+    ", " +
+    listOfHobbies[getRandomInteger(0, 31)] +
+    ", " +
+    listOfHobbies[getRandomInteger(0, 31)]
   );
 }
