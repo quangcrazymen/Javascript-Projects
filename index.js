@@ -53,7 +53,7 @@ requestAnimationFrame(animate);
 function generateTable() {
   console.log(getRandomName());
   // Number of rows and columns in the table
-  const numRows = 50;
+  const numRows = 500;
   const numCols = 6;
 
   // Get the table element
