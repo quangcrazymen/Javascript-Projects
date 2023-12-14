@@ -31,6 +31,19 @@ document.getElementById("submit-python").addEventListener("click", () => {
   }
 });
 
+var sqlInput = document.getElementById("sql-input");
+
+document.getElementById("submit-sql").addEventListener("click", () => {
+  let score = countWordOccurrences(sqlInput.value, [
+    "select",
+    "from",
+    "people",
+    "171202",
+  ]);
+  if (score > 3) {
+    console.log("your answer is right");
+  }
+});
 document.addEventListener("keydown", function (event) {
   // Check if Ctrl (Cmd on Mac) and 'F' keys are pressed
   if ((event.ctrlKey || event.metaKey) && event.key === "f") {
