@@ -17,6 +17,20 @@ textarea.addEventListener("keydown", function (event) {
   }
 });
 
+// textarea.addEventListener("change", function (event) {});
+
+document.getElementById("submit-python").addEventListener("click", () => {
+  let score = countWordOccurrences(textarea.value, [
+    "for",
+    "in",
+    "numbers",
+    "sum",
+  ]);
+  if (score > 3) {
+    console.log("your answer is right");
+  }
+});
+
 document.addEventListener("keydown", function (event) {
   // Check if Ctrl (Cmd on Mac) and 'F' keys are pressed
   if ((event.ctrlKey || event.metaKey) && event.key === "f") {
