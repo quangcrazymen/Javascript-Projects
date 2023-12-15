@@ -19,13 +19,34 @@ function draw() {
   }
 }
 
-// window.addEventListener("load", draw);
+function OnStart() {
+  EnableSection("finance", false);
+  EnableSection("sql", false);
+  EnableSection("python", false);
+}
+// On Start application
+window.addEventListener("load", OnStart);
+
 var element = document.getElementById("dummy-button");
 element.addEventListener("click", generateTable);
-//var finance_section = document.getElementById("finance-section");
-// finance_section.addEventLi stener("input", compareWithRightValue);
+
+var finance_section = document.getElementById("finance-section");
 var sql_section = document.getElementById("sql-section");
 var python_section = document.getElementById("python-section");
+
+function EnableSection(section, enable = true) {
+  switch (section) {
+    case "finance":
+      finance_section.style.display = enable ? "block" : "none";
+      break;
+    case "sql":
+      sql_section.style.display = enable ? "block" : "none";
+      break;
+    case "python":
+      python_section.style.display = enable ? "block" : "none";
+      break;
+  }
+}
 
 // ############ FINANCE SECTION #################
 document.getElementById("submit-finance").addEventListener("click", () => {
@@ -34,21 +55,7 @@ document.getElementById("submit-finance").addEventListener("click", () => {
     openModal("Congratulation you pass finance section");
   }
 });
-// function compareWithRightValue() {
-//   console.log("Hello");
-//   if (finance_section.value === "123") {
-//     openModal();
-//   }
-//   if (finance_section.value === "terminate") {
-//     sql_section.style.display = "none";
-//   }
-// }
 
-function terminateSQLSection() {}
-
-function moveElement2() {
-  element2.style.transform = `translate(${xPosition}px,${yPosition}px)`;
-}
 // function animate() {
 //   // Perform your animation or update logic here
 //   moveTheButton();

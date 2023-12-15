@@ -51,5 +51,7 @@ document.addEventListener("keydown", function (event) {
 
     // Your custom action when Ctrl+F is pressed
     console.log("Ctrl+F pressed! Your custom action goes here.");
+
+    openModal("You try to cheat huh, not gonna happen, nice try :))");
   }
 });
