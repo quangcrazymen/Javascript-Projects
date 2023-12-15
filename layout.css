@@ -1,92 +1,94 @@
 canvas {
-    border: 1px solid black;
-  }
-  #dummy-button {
-    color: blueviolet;
-    /* position: absolute;
-    left: 12px; */
-  }
-  .object {
-    width: 75%;
-    color: black;
-    border: 1px solid #ccc;
-    display: flex;
-  }
-  .object img {
-    width: 50%;
-    display: block;
-  }
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-  }
+  border: 1px solid black;
+}
+#dummy-button {
+  color: blueviolet;
+  /* position: absolute;
+  left: 12px; */
+}
+.object {
+  width: 75%;
+  color: black;
+  border: 1px solid #ccc;
+  display: flex;
+}
+.object img {
+  width: 50%;
+  display: block;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
 
-  table,
-  th,
-  td {
-    border: 1px solid #ccc;
-  }
+table,
+th,
+td {
+  border: 1px solid #ccc;
+}
 
-  th,
-  td {
-    padding: 10px;
-    text-align: center;
-  }
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
 
-  textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-bottom: 10px;
-  }
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
 
-  button {
-    padding: 8px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
+button {
+  padding: 8px;
+  margin-right: 5px;
+  cursor: pointer;
+}
 
-  #element2{
-    position: absolute;
-    left: 100px;
-    top :600px;
-    width: 100%;
-    height: 600px;
-    background-color: blueviolet;
-  }
+#element2{
+  position: absolute;
+  left: 100px;
+  top :600px;
+  width: 100%;
+  height: 600px;
+  background-color: blueviolet;
+}
 
 
-  .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    align-items: center;
-    justify-content: center;
-  }
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
 
-  .modal {
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
 
-  .close-btn {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
+.close-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
 
 #hightlighted {
   color: blueviolet;
   display: inline;
+  text-decoration: underline;
+  text-decoration-style: solid 1px black;
 }
 
 .section-header{
@@ -99,4 +101,12 @@ canvas {
 *{
   background-color: antiquewhite;
   text-align: center;
+}
+
+h1{
+  color: #3271a8;
+}
+
+button:hover{
+  background-color: skyblue; 
 }

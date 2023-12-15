@@ -15,15 +15,16 @@
     <!-- <div class="object">
       <img src="Images/Cloud.png" alt="Local Image" />
     </div> -->
-    <div>
+    <div id="finance-section">
       <h2 class="section-header">Finance section</h2>
       <h3>
         Challenge: At the interest rate of 19.34%, the 10 years discounting
         factor will be (round the result to 4 decimal places(ex: 0.1234))
       </h3>
-      <input id="finance-section" type="text" />
+      <input id="finance-answer" type="text" />
+      <button id="submit-finance">Submit your answer</button>
     </div>
-    <div>
+    <div id="python-section">
       <h2 class="section-header">Python Section</h2>
       <h3>
         Challenge: Loop through the following array to find the sum of all the
@@ -63,7 +64,7 @@
     <div class="overlay" id="overlay">
       <div class="modal">
         <span class="close-btn" onclick="closeModal()">X</span>
-        <p>Congratulation you got the rigth answer, please move on</p>
+        <p id="overlay-content"></p>
       </div>
     </div>
     <script type="text/javascript" src="scoringSystem.js"></script>

@@ -22,34 +22,42 @@ function draw() {
 // window.addEventListener("load", draw);
 var element = document.getElementById("dummy-button");
 element.addEventListener("click", generateTable);
-var finance_section = document.getElementById("finance-section");
-finance_section.addEventListener("input", compareWithRightValue);
+//var finance_section = document.getElementById("finance-section");
+// finance_section.addEventLi stener("input", compareWithRightValue);
 var sql_section = document.getElementById("sql-section");
+var python_section = document.getElementById("python-section");
 
-function compareWithRightValue() {
-  console.log("Hello");
-  if (finance_section.value === "123") {
-    openModal();
+// ############ FINANCE SECTION #################
+document.getElementById("submit-finance").addEventListener("click", () => {
+  let input = document.getElementById("finance-answer");
+  if (input.value === "0.1712") {
+    openModal("Congratulation you pass finance section");
   }
-  if (finance_section.value === "terminate") {
-    sql_section.style.display = "none";
-  }
-}
+});
+// function compareWithRightValue() {
+//   console.log("Hello");
+//   if (finance_section.value === "123") {
+//     openModal();
+//   }
+//   if (finance_section.value === "terminate") {
+//     sql_section.style.display = "none";
+//   }
+// }
 
 function terminateSQLSection() {}
 
 function moveElement2() {
   element2.style.transform = `translate(${xPosition}px,${yPosition}px)`;
 }
-function animate() {
-  // Perform your animation or update logic here
-  moveTheButton();
-  // Call requestAnimationFrame again to schedule the next frame
-  requestAnimationFrame(animate);
-}
+// function animate() {
+//   // Perform your animation or update logic here
+//   moveTheButton();
+//   // Call requestAnimationFrame again to schedule the next frame
+//   requestAnimationFrame(animate);
+// }
 
-// Start the animation loop
-requestAnimationFrame(animate);
+// // Start the animation loop
+// requestAnimationFrame(animate);
 
 function generateTable() {
   // Number of rows and columns in the table
@@ -88,24 +96,18 @@ function generateTable() {
   }
 }
 
+//
+
 function getRandomValue() {
   // Generate a random number between 1 and 100 for demonstration purposes
   return Math.floor(Math.random() * 100) + 1;
 }
 
-function formatText(command) {
-  document.execCommand(command, false, null);
-}
-
-function insertLink() {
-  var url = prompt("Enter URL:");
-  if (url) {
-    document.execCommand("createLink", false, url);
-  }
-}
-
-function openModal() {
+function openModal(
+  message = "Congratulation you got the right answer, please move on"
+) {
   var overlay = document.getElementById("overlay");
+  document.getElementById("overlay-content").textContent = message;
   overlay.style.display = "flex";
 }
 

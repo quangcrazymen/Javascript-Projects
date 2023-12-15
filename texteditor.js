@@ -42,6 +42,8 @@ document.getElementById("submit-sql").addEventListener("click", () => {
     console.log("your answer is right");
   }
 });
+
+// Anti cheat
 document.addEventListener("keydown", function (event) {
   // Check if Ctrl (Cmd on Mac) and 'F' keys are pressed
   if ((event.ctrlKey || event.metaKey) && event.key === "f") {
