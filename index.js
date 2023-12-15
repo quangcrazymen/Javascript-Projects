@@ -5,6 +5,7 @@ function moveTheButton() {
   var evaluatedString = `translate(${xPosition}px,${yPosition}px)`;
   element.style.transform = evaluatedString;
 }
+
 function draw() {
   const canvas = document.getElementById("tutorial");
   if (canvas.getContext) {
@@ -18,7 +19,7 @@ function draw() {
   }
 }
 
-window.addEventListener("load", draw);
+// window.addEventListener("load", draw);
 var element = document.getElementById("dummy-button");
 element.addEventListener("click", generateTable);
 var finance_section = document.getElementById("finance-section");
@@ -51,7 +52,6 @@ function animate() {
 requestAnimationFrame(animate);
 
 function generateTable() {
-  console.log(getRandomName());
   // Number of rows and columns in the table
   const numRows = 500;
   const numCols = 6;
@@ -73,7 +73,6 @@ function generateTable() {
   // Generate random data for the table
   for (var i = 1; i <= numRows; i++) {
     var row = table.insertRow(i);
-    // for (var j = 0; j < numCols; j++) {
     var id = row.insertCell(0);
     id.innerHTML = getRandomInteger(0, 999999);
     var name = row.insertCell(1);
@@ -86,7 +85,6 @@ function generateTable() {
     interest.innerHTML = getRandomHobbies();
     var hobbies = row.insertCell(5);
     hobbies.innerHTML = getRandomHobbies();
-    // }
   }
 }
 

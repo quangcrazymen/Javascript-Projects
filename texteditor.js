@@ -17,8 +17,6 @@ textarea.addEventListener("keydown", function (event) {
   }
 });
 
-// textarea.addEventListener("change", function (event) {});
-
 document.getElementById("submit-python").addEventListener("click", () => {
   let score = countWordOccurrences(textarea.value, [
     "for",

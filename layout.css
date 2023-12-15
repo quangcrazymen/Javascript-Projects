@@ -85,5 +85,18 @@ canvas {
   }
 
 #hightlighted {
-  color: cyan;
+  color: blueviolet;
+  display: inline;
+}
+
+.section-header{
+  text-align: center;
+  background-color: skyblue;
+  color:blueviolet;
+  border: 1px black dashed;
+}
+
+*{
+  background-color: antiquewhite;
+  text-align: center;
 }

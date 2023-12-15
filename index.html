@@ -7,20 +7,42 @@
     <link rel="stylesheet" href="layout.css" type="text/css" />
   </head>
   <body>
-    <h1>
-      Please open this on a computer because i dont have the budget to make it
-      to mobile devices :)
-    </h1>
-    <canvas id="tutorial" width="150" height="150">
+    <h1>Welcome to murder mystery (just kidding, very simple brain teasers)</h1>
+    <!-- <canvas id="tutorial" width="150" height="150">
       current stock price: $3.15 + 0.15
-    </canvas>
+    </canvas> -->
     <button id="dummy-button">Press this</button>
-    <div class="object">
+    <!-- <div class="object">
       <img src="Images/Cloud.png" alt="Local Image" />
+    </div> -->
+    <div>
+      <h2 class="section-header">Finance section</h2>
+      <h3>
+        Challenge: At the interest rate of 19.34%, the 10 years discounting
+        factor will be (round the result to 4 decimal places(ex: 0.1234))
+      </h3>
+      <input id="finance-section" type="text" />
+    </div>
+    <div>
+      <h2 class="section-header">Python Section</h2>
+      <h3>
+        Challenge: Loop through the following array to find the sum of all the
+        number using python, and assign the rusult to varible name
+        <span id="hightlighted">sum</span>
+      </h3>
+      <h4>numbers = [115, 77, 256, 451, 333, 169, 268, 111, 222]</h4>
+      <textarea id="editor"></textarea>
+      <div>
+        <button id="submit-python">Submit your codes</button>
+      </div>
     </div>
     <div id="sql-section">
-      <h2>SQL Section</h2>
-      <h3>People table</h3>
+      <h2 class="section-header">SQL Section</h2>
+      <h3>
+        Challenge: ID = Take the value behind decimal point in finance section
+        combine with the last 2 digits of sum in python section
+      </h3>
+      <h4>Query the data in people table using ID you've just found</h4>
       <h4>Enter your query here pleaseeeeeeee</h4>
       <input id="sql-input" type="text" />
       <button id="submit-sql">submit you answer here</button>
@@ -29,34 +51,12 @@
       </table>
     </div>
     <div>
-      <h2>Finance section</h2>
-      <h4>
-        At the interest rate of 19.34%, the 10 years discounting factor will be
-        (round the result to 4 decimal places(ex: 0.1234))
-      </h4>
-      <input id="finance-section" type="text" />
-    </div>
-    <div>
-      <h2>Python Section</h2>
-      <h3>
-        Challenge: Loop through the following array to find the sum of all the
-        number using python, and assign the rusult to varible name
-        <h3 id="hightlighted">sum</h3>
-      </h3>
-      <h4>numbers = [115, 77, 256, 451, 333, 169, 268, 111, 222]</h4>
-      <textarea id="editor"></textarea>
-      <div>
-        <button id="submit-python">Submit your codes</button>
-      </div>
-    </div>
-    <div>
       <iframe
         width="420"
         height="315"
         src="https://www.youtube.com/embed/1k9gRrg8c9Q"
       >
       </iframe>
-      <!-- <div id="element2">d</div> -->
     </div>
     <button onclick="openModal()">Open Modal</button>
 

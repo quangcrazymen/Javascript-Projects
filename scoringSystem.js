@@ -9,7 +9,7 @@ function countWordOccurrences(sentence, targetWords) {
   for (const word of words) {
     for (const targetWord of targetWords) {
       // Convert both the word and targetWord to lowercase for case-insensitive comparison
-      if (word.toLowerCase() === targetWord.toLowerCase()) {
+      if (word.toLowerCase().includes(targetWord.toLowerCase())) {
         count++;
       }
     }
