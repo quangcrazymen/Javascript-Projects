@@ -111,3 +111,30 @@ h1{
 button:hover{
   background-color: skyblue; 
 }
+
+table tr:first-child {
+  background-color: green; /* Set the background color to your desired color */
+  font-weight: bold;
+  border-color: #3271a8;
+}
+
+#sql-result button{
+  margin-top: 1rem;
+  width: 40%;
+}
+
+#sql-result button:hover{
+  background-color: #15e30e;
+}
+
+/* .result-section{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+} */
+
+.result-section{
+  color: #15e30e;
+  border: 1px dashed darkblue;
+  border-radius: 8px;
+}

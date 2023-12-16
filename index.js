@@ -28,8 +28,11 @@ function OnStart() {
 // On Start application
 window.addEventListener("load", OnStart);
 
-var startButton = document.getElementById("dummy-button");
-startButton.addEventListener("click", () => EnableSection("finance", true));
+var startButton = document.getElementById("start-button");
+startButton.addEventListener("click", () => {
+  EnableSection("finance", true);
+  startButton.style.display = "none";
+});
 
 var finance_section = document.getElementById("finance-section");
 var sql_section = document.getElementById("sql-section");
@@ -60,6 +63,8 @@ function EnableSection(section, enable = true) {
       break;
     case "present":
       present_section.style.display = enable ? "block" : "none";
+      if (enable == false) return;
+      CleanUpAllSection();
       break;
   }
 }
@@ -126,6 +131,34 @@ function generateTable() {
     var hobbies = row.insertCell(5);
     hobbies.innerHTML = getRandomHobbies();
   }
+}
+
+function ShowResultForSqlSection() {
+  var table = document.getElementById("sql-result-table");
+
+  // table.style.backgroundColor = "#15e30e";
+  var headerName = ["Id", "Name", "Gender", "Age", "Interest", "Hobbies"];
+  // Generate table header
+  var headerRow = table.insertRow(0);
+  for (var j = 0; j < 6; j++) {
+    var headerCell = headerRow.insertCell(j);
+    headerCell.innerHTML = headerName[j];
+  }
+
+  var row = table.insertRow(1);
+  var id = row.insertCell(0);
+  id.innerHTML = 171202;
+  var name = row.insertCell(1);
+  name.innerHTML = "Linh Phan";
+  var gender = row.insertCell(2);
+  gender.innerHTML = "female";
+  var age = row.insertCell(3);
+  age.innerHTML = "21(hopefully)";
+  var interest = row.insertCell(4);
+  interest.innerHTML = "Enviroment, Technology, Finance";
+  var hobbies = row.insertCell(5);
+  hobbies.innerHTML =
+    "Being a freak, learning novel things, smiling, xaolin:), blah blah....";
 }
 
 function getRandomValue() {

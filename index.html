@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="layout.css" type="text/css" />
   </head>
   <body>
-    <h1>Welcome to murder mystery (just kidding, very simple brain teasers)</h1>
+    <h1 id="Big-title">
+      Welcome to murder mystery (just kidding, it's a series of simple brain
+      teasers)
+    </h1>
     <!-- <canvas id="tutorial" width="150" height="150">
       current stock price: $3.15 + 0.15
     </canvas> -->
-    <button id="dummy-button">Press this</button>
+    <button id="start-button">Press this</button>
     <!-- <div class="object">
       <img src="Images/Cloud.png" alt="Local Image" />
     </div> -->
@@ -25,13 +28,15 @@
         <input id="finance-answer" type="text" />
         <button id="submit-finance">Submit your answer, freak!</button>
       </div>
-      <div id="finance-result">Result: 0.1712</div>
+      <div class="result-section" id="finance-result">
+        <h2>Result: 0.1712</h2>
+      </div>
     </div>
     <div id="python-section">
       <h2 class="section-header">Python Section</h2>
       <h3>
         Challenge: Loop through the following array to find the sum of all the
-        number using python, and assign the rusult to varible name
+        number using python, and assign the result to varible name
         <span id="hightlighted">sum</span>
       </h3>
       <h4>numbers = [115, 77, 256, 451, 333, 169, 268, 111, 222]</h4>
@@ -40,7 +45,9 @@
         <textarea id="editor"></textarea>
         <button id="submit-python">Submit your codes</button>
       </div>
-      <div id="python-result">Result: sum = 2002</div>
+      <div class="result-section" id="python-result">
+        <h2>Result: sum = 2002</h2>
+      </div>
     </div>
     <div id="sql-section">
       <h2 class="section-header">SQL Section</h2>
@@ -49,7 +56,13 @@
         combine with the last 2 digits of sum in python section (Ex: 0.3432 and
         9843, We got ID = 343243)
       </h3>
-      <h4>Query the data in people table using ID you've just found</h4>
+      <h4>
+        Query the data in people table using ID you've just found
+        <span style="text-decoration: underline"
+          >(Don't you dare using Ctrl+F to find the result, that's
+          cheating!)</span
+        >
+      </h4>
       <div id="sql-input">
         <h4>Enter your query here pleaseeeeeeee</h4>
         <input id="input-sql" type="text" />
@@ -61,8 +74,11 @@
       <div id="sql-result">
         <h3>Result:</h3>
         <table id="sql-result-table">
-          <!-- Table content will be dynamically generated here -->
+          <!-- Table content show the result here -->
         </table>
+        <button onclick="EnableSection('present', true)">
+          Get your treat :>
+        </button>
       </div>
     </div>
     <div id="present-section">

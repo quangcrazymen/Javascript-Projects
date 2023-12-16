@@ -46,7 +46,6 @@ document.getElementById("submit-python").addEventListener("click", () => {
 var sqlInput = document.getElementById("input-sql");
 
 // ############ SQL SECTION ################
-// ############ SQL SECTION ################
 document.getElementById("submit-sql").addEventListener("click", () => {
   let score = countWordOccurrences(sqlInput.value, [
     "select",
@@ -55,17 +54,24 @@ document.getElementById("submit-sql").addEventListener("click", () => {
     "171202",
   ]);
   if (score > 3) {
-    console.log("your answer is right");
     openModal(
-      "Congratulation you've passed the sql section, ready for my congratulation for you."
+      "Wow glad to know that you've made it this far, behold.........."
     );
+    ShowResultForSqlSection();
     EnableSectionResult("sql");
-    EnableSection("present", true);
-    EnableSection("finance", false);
-    EnableSection("sql", false);
-    EnableSection("python", false);
+    // EnableSection("finance", false);
+    // EnableSection("sql", false);
+    // EnableSection("python", false);
   }
 });
+
+function CleanUpAllSection() {
+  var title = document.getElementById("Big-title");
+  title.innerText = "Voila, tada";
+  EnableSection("finance", false);
+  EnableSection("sql", false);
+  EnableSection("python", false);
+}
 
 // Anti cheat
 document.addEventListener("keydown", function (event) {
