@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="layout.css" type="text/css" />
   </head>
   <body>
-    <h1>Welcome to murder mystery (just kidding, very simple brain teasers)</h1>
+    <h1>
+      Welcome to murder mystery (just kidding, it's a series of brain teasers)
+    </h1>
     <!-- <canvas id="tutorial" width="150" height="150">
       current stock price: $3.15 + 0.15
     </canvas> -->
@@ -21,8 +23,11 @@
         Challenge: At the interest rate of 19.34%, the 10 years discounting
         factor will be (round the result to 4 decimal places(ex: 0.1234))
       </h3>
-      <input id="finance-answer" type="text" />
-      <button id="submit-finance">Submit your answer</button>
+      <div id="finance-input">
+        <input id="finance-answer" type="text" />
+        <button id="submit-finance">Submit your answer, freak!</button>
+      </div>
+      <div id="finance-result">Result: 0.1712</div>
     </div>
     <div id="python-section">
       <h2 class="section-header">Python Section</h2>
@@ -32,10 +37,11 @@
         <span id="hightlighted">sum</span>
       </h3>
       <h4>numbers = [115, 77, 256, 451, 333, 169, 268, 111, 222]</h4>
-      <textarea id="editor"></textarea>
-      <div>
+      <div id="python-input">
+        <textarea id="editor"></textarea>
         <button id="submit-python">Submit your codes</button>
       </div>
+      <div id="python-result">Result: sum = 2002</div>
     </div>
     <div id="sql-section">
       <h2 class="section-header">SQL Section</h2>
@@ -45,27 +51,31 @@
         9843, We got ID = 343243)
       </h3>
       <h4>Query the data in people table using ID you've just found</h4>
-      <h4>Enter your query here pleaseeeeeeee</h4>
-      <input id="sql-input" type="text" />
-      <button id="submit-sql">submit you answer here</button>
-      <table id="randomTable">
-        <!-- Table content will be dynamically generated here -->
-      </table>
+      <div id="sql-input">
+        <h4>Enter your query here pleaseeeeeeee</h4>
+        <input id="sql-input" type="text" />
+        <button id="submit-sql">Submit you answer here</button>
+        <table id="randomTable">
+          <!-- Table content will be dynamically generated here -->
+        </table>
+      </div>
+      <div id="sql-result">Result:</div>
     </div>
-    <div>
+    <div id="present-section">
       <iframe
         width="420"
         height="315"
         src="https://www.youtube.com/embed/1k9gRrg8c9Q"
       >
       </iframe>
+      <h1>Thank u 4 playin, yo</h1>
     </div>
-    <button onclick="openModal()">Open Modal</button>
-
     <div class="overlay" id="overlay">
       <div class="modal">
-        <span class="close-btn" onclick="closeModal()">X</span>
         <p id="overlay-content"></p>
+        <button class="close-btn" onclick="closeModal()">
+          Too easy, next pleaseee
+        </button>
       </div>
     </div>
     <script type="text/javascript" src="scoringSystem.js"></script>
