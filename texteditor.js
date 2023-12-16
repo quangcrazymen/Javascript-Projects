@@ -46,6 +46,7 @@ document.getElementById("submit-python").addEventListener("click", () => {
 var sqlInput = document.getElementById("input-sql");
 
 // ############ SQL SECTION ################
+// ############ SQL SECTION ################
 document.getElementById("submit-sql").addEventListener("click", () => {
   let score = countWordOccurrences(sqlInput.value, [
     "select",
