@@ -59,6 +59,9 @@ document.getElementById("submit-sql").addEventListener("click", () => {
     );
     ShowResultForSqlSection();
     EnableSectionResult("sql");
+    EnableSection("finance", false);
+    EnableSection("python", false);
+    sql_section.style.transform = `translate(0px,-150px)`;
     // EnableSection("finance", false);
     // EnableSection("sql", false);
     // EnableSection("python", false);

@@ -127,14 +127,22 @@ table tr:first-child {
   background-color: #15e30e;
 }
 
-/* .result-section{
-  display: flex;
-  align-items: center;
-  justify-items: center;
-} */
-
 .result-section{
   color: #15e30e;
   border: 1px dashed darkblue;
   border-radius: 8px;
+}
+
+#start-button {
+  background-color: #15e30e;
+  /* position: absolute; */
+  transition: transform 0.5s ease; /* Smooth transition over 0.5 seconds with ease timing function */
+}
+
+#sql-section{
+  transition: transform 0.5s ease;
+}
+
+#sql-result td {
+  background-color: #15e30e;
 }

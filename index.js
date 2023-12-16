@@ -1,7 +1,7 @@
-var xPosition = 100;
+var xPosition = 0;
 var yPosition = 100;
 function moveTheButton() {
-  var element = document.getElementById("dummy-button");
+  var element = document.getElementById("start-button");
   var evaluatedString = `translate(${xPosition}px,${yPosition}px)`;
   element.style.transform = evaluatedString;
 }
@@ -20,6 +20,7 @@ function draw() {
 }
 
 function OnStart() {
+  moveTheButton();
   EnableSection("finance", false);
   EnableSection("sql", false);
   EnableSection("python", false);
