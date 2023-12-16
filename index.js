@@ -23,38 +23,63 @@ function OnStart() {
   EnableSection("finance", false);
   EnableSection("sql", false);
   EnableSection("python", false);
+  EnableSection("present", false);
 }
 // On Start application
 window.addEventListener("load", OnStart);
 
-var element = document.getElementById("dummy-button");
-element.addEventListener("click", generateTable);
+var startButton = document.getElementById("dummy-button");
+startButton.addEventListener("click", () => EnableSection("finance", true));
 
 var finance_section = document.getElementById("finance-section");
 var sql_section = document.getElementById("sql-section");
 var python_section = document.getElementById("python-section");
+var present_section = document.getElementById("present-section");
+// Result of each section
+var finance_result = document.getElementById("finance-result");
+var sql_result = document.getElementById("sql-result");
+var python_result = document.getElementById("python-result");
+// Input section
+var finance_input = document.getElementById("finance-input");
+var sql_input = document.getElementById("sql-input");
+var python_input = document.getElementById("python-input");
 
 function EnableSection(section, enable = true) {
   switch (section) {
     case "finance":
       finance_section.style.display = enable ? "block" : "none";
+      finance_result.style.display = "none";
       break;
     case "sql":
       sql_section.style.display = enable ? "block" : "none";
+      sql_result.style.display = "none";
       break;
     case "python":
       python_section.style.display = enable ? "block" : "none";
+      python_result.style.display = "none";
+      break;
+    case "present":
+      present_section.style.display = enable ? "block" : "none";
       break;
   }
 }
 
-// ############ FINANCE SECTION #################
-document.getElementById("submit-finance").addEventListener("click", () => {
-  let input = document.getElementById("finance-answer");
-  if (input.value === "0.1712") {
-    openModal("Congratulation you pass finance section");
+function EnableSectionResult(section) {
+  switch (section) {
+    case "finance":
+      finance_input.style.display = "none";
+      finance_result.style.display = "block";
+      break;
+    case "sql":
+      sql_input.style.display = "none";
+      sql_result.style.display = "block";
+      break;
+    case "python":
+      python_input.style.display = "none";
+      python_result.style.display = "block";
+      break;
   }
-});
+}
 
 // function animate() {
 //   // Perform your animation or update logic here
@@ -102,8 +127,6 @@ function generateTable() {
     hobbies.innerHTML = getRandomHobbies();
   }
 }
-
-//
 
 function getRandomValue() {
   // Generate a random number between 1 and 100 for demonstration purposes

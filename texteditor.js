@@ -17,6 +17,17 @@ textarea.addEventListener("keydown", function (event) {
   }
 });
 
+// ############ FINANCE SECTION #################
+document.getElementById("submit-finance").addEventListener("click", () => {
+  let input = document.getElementById("finance-answer");
+  if (input.value === "0.1712") {
+    openModal("Congratulation you've passed finance section");
+    EnableSection("python", true);
+    EnableSectionResult("finance");
+  }
+});
+
+// ############ PYTHON SECTION ################
 document.getElementById("submit-python").addEventListener("click", () => {
   let score = countWordOccurrences(textarea.value, [
     "for",
@@ -25,12 +36,16 @@ document.getElementById("submit-python").addEventListener("click", () => {
     "sum",
   ]);
   if (score > 3) {
-    console.log("your answer is right");
+    openModal("Congratulation you've passed the Python section");
+    EnableSection("sql", true);
+    EnableSectionResult("python");
+    generateTable();
   }
 });
 
-var sqlInput = document.getElementById("sql-input");
+var sqlInput = document.getElementById("input-sql");
 
+// ############ SQL SECTION ################
 document.getElementById("submit-sql").addEventListener("click", () => {
   let score = countWordOccurrences(sqlInput.value, [
     "select",
@@ -40,6 +55,14 @@ document.getElementById("submit-sql").addEventListener("click", () => {
   ]);
   if (score > 3) {
     console.log("your answer is right");
+    openModal(
+      "Congratulation you've passed the sql section, ready for my congratulation for you."
+    );
+    EnableSectionResult("sql");
+    EnableSection("present", true);
+    EnableSection("finance", false);
+    EnableSection("sql", false);
+    EnableSection("python", false);
   }
 });
 

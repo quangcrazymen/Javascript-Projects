@@ -46,6 +46,7 @@ button {
   padding: 8px;
   margin-right: 5px;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 #element2{
@@ -79,9 +80,9 @@ button {
 
 .close-btn {
   cursor: pointer;
-  position: absolute;
+  /* position: absolute;
   top: 10px;
-  right: 10px;
+  right: 10px; */
 }
 
 #hightlighted {
